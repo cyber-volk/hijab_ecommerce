@@ -12,16 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-// Import images
-import watchtreeImage from '@/images/watchtree.jpg'
-import sunglassesImage from '@/images/sunglasses.jpg'
-import watchtreeerasedImage from '@/images/watchtreeerased.jpg'
-import browntestedImage from '@/images/browntested.jpg'
-import brownImage from '@/images/brown.jpg'
-import pinkImage from '@/images/pink.jpg'
-import greydotedwhiteImage from '@/images/greydotedwhite.jpg'
-import lightgreenImage from '@/images/lightgreen.jpg'
-
 // Change the font import
 import { Lobster } from 'next/font/google'
 
@@ -52,7 +42,7 @@ const products: Product[] = [
     category: "Dresses", 
     stock: 20, 
     colors: ["Light Brown"], 
-    images: [watchtreeerasedImage.src],
+    images: ["/images/watchtreeerased.jpg"],
     discount: 23.85, // (130 - 99) / 130 * 100
     bestSeller: true
   },
@@ -64,7 +54,7 @@ const products: Product[] = [
     category: "Scarfs", 
     stock: 50, 
     colors: ["Black", "Brown"], 
-    images: [browntestedImage.src, sunglassesImage.src, watchtreeImage.src],
+    images: ["/images/browntested.jpg", "/images/sunglasses.jpg", "/images/watchtree.jpg"],
     bestSeller: true
   },
   { 
@@ -75,7 +65,7 @@ const products: Product[] = [
     category: "Scarfs", 
     stock: 30, 
     colors: ["Brown"], 
-    images: [brownImage.src]
+    images: ["/images/brown.jpg"]
   },
   { 
     id: 4, 
@@ -85,7 +75,7 @@ const products: Product[] = [
     category: "Scarfs", 
     stock: 40, 
     colors: ["Pink"], 
-    images: [pinkImage.src]
+    images: ["/images/pink.jpg"]
   },
   { 
     id: 5, 
@@ -95,7 +85,7 @@ const products: Product[] = [
     category: "Scarfs", 
     stock: 35, 
     colors: ["Black", "White"], 
-    images: [greydotedwhiteImage.src]
+    images: ["/images/greydotedwhite.jpg"]
   },
   { 
     id: 6, 
@@ -105,7 +95,7 @@ const products: Product[] = [
     category: "Scarfs", 
     stock: 25, 
     colors: ["Green"], 
-    images: [lightgreenImage.src]
+    images: ["/images/lightgreen.jpg"]
   },
 ]
 
@@ -138,12 +128,12 @@ export default function Page() {
   const categories = ["Scarfs", "Dresses", "Accessories"]
 
   const headerImages: string[] = [
-    browntestedImage.src,
-    brownImage.src,
-    greydotedwhiteImage.src,
-    lightgreenImage.src,
-    pinkImage.src,
-    watchtreeerasedImage.src
+    "/images/browntested.jpg",
+    "/images/brown.jpg",
+    "/images/greydotedwhite.jpg",
+    "/images/lightgreen.jpg",
+    "/images/pink.jpg",
+    "/images/watchtreeerased.jpg"
   ]
 
   useEffect(() => {
@@ -294,8 +284,10 @@ export default function Page() {
             <Image
               src={headerImages[currentHeaderImage]}
               alt="Header Image"
-              layout="fill"
-              objectFit="cover"
+              width={1920}
+              height={1080}
+              priority
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
               {headerImages.map((_, index) => (
@@ -397,7 +389,7 @@ export default function Page() {
                           src={product.images[currentProductImages[product.id] || 0]}
                           alt={product.name}
                           width={500}
-                          height={300}
+                          height={500}
                           style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                         />
                         <Button
