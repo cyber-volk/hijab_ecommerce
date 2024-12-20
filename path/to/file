@@ -1,0 +1,50 @@
+import Image from 'next/image';
+
+// Replace all instances of Image like this:
+<Image
+  src="/_next/static/media/browntested.9b89e696.jpg"
+  alt="Brown Tested"
+  fill
+  style={{ objectFit: 'cover' }}
+/>
+
+// Do the same for all other images:
+<Image
+  src="/_next/static/media/watchtreeerased.5d750c5f.jpg"
+  alt="Watch Tree Erased"
+  width={500} // Adjust this value as needed
+  height={300} // Adjust this value as needed
+  style={{ objectFit: 'cover' }}
+/>
+
+<Image
+  src="/_next/static/media/brown.b58e9eac.jpg"
+  alt="Brown"
+  width={500} // Adjust this value as needed
+  height={300} // Adjust this value as needed
+  style={{ objectFit: 'cover' }}
+/>
+
+<Image
+  src="/_next/static/media/pink.72d2ff4c.jpg"
+  alt="Pink"
+  width={500} // Adjust this value as needed
+  height={300} // Adjust this value as needed
+  style={{ objectFit: 'cover' }}
+/>
+
+<Image
+  src="/_next/static/media/greydotedwhite.9d11b2f1.jpg"
+  alt="Grey Dotted White"
+  width={500} // Adjust this value as needed
+  height={300} // Adjust this value as needed
+  style={{ objectFit: 'cover' }}
+/>
+
+<Image
+  src="/_next/static/media/lightgreen.cdf47737.jpg"
+  alt="Light Green"
+  width={500} // Adjust this value as needed
+  height={300} // Adjust this value as needed
+  style={{ objectFit: 'cover' }}
+/>
